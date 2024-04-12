@@ -1,0 +1,25 @@
+<p>home works!</p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Nombre</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let form of formularios">
+
+        <th scope="row"><img src="{{form.imagen}}" width="100px" alt="{{form.nombre}}"></th>
+        <td>{{ form.nombre }}</td>
+        <td>
+          <button (click)="llenar(form._id)">Llenar</button>
+          <ng-container *ngIf="this.rol == 'administrador'">
+            <button (click)="editar()">Editar</button>
+            <button (click)="eliminar()">Eliminar</button>
+          </ng-container>
+        </td>
+
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title">
+            <h1>Login</h1>
+        </div>
+        <form (submit)="submitForm()">
+            <div class="login-form">
+                <div class="control-group">
+                    <input type="text" class="login-field" placeholder="correo" name="correo" [(ngModel)]="user.correo"
+                        id="correo" required="">
+                    <label class="login-field-icon fui-user" for="correo"></label>
+                </div>
+
+                <div class="control-group">
+                    <input type="password" class="login-field" placeholder="clave" name="clave" [(ngModel)]="user.clave"
+                        id="clave" required="">
+                    <label class="login-field-icon fui-lock" for="clave"></label>
+                </div>
+
+                <button class="btn btn-primary btn-large btn-block" type="submit">login</button>
+                <a class="login-link" href="#">Olvidaste tu clave?</a>
+            </div>
+        </form>
+    </div>
+</div>
