@@ -20,20 +20,21 @@ export class HomeComponent {
 
   async ngOnInit() {
     this.rol = await this.authService.getRol();
-    (await this.formService.getFormularios()).subscribe(
-      (res) => {
-        this.formularios = res.data;
-        console.log(this.formularios);
+    this.formularios = await this.formService.getFormularios()
+    // .subscribe(
+    //   (res) => {
+    //     this.formularios = res.data;
+    //     console.log(this.formularios);
 
-      },
-      (err) => {
-        console.error(err)
-      }
-    );
+    //   }, 
+    //   (err) => {
+    //     console.error(err)
+    //   }
+    // );
   }
   llenar(id: string){
     console.log(id);
-    this.router.navigate(['/formularios/completar/' + id]);
+    this.router.navigate(['/formularios/historiales/' + id]);
   }
   editar(){
     this.router.navigate(['/'])

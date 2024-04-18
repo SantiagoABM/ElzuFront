@@ -1,5 +1,6 @@
-<p>home works!</p>
+<h2>Equipos</h2>
 <table class="table table-hover">
+
   <thead>
     <tr>
       <th scope="col"></th>
@@ -11,7 +12,7 @@
     <tr *ngFor="let form of formularios">
 
         <th scope="row"><img src="{{form.imagen}}" width="100px" alt="{{form.nombre}}"></th>
-        <td>{{ form.nombre }}</td>
+        <td>{{form.nombre}}</td>
         <td>
           <button (click)="llenar(form._id)">Llenar</button>
           <ng-container *ngIf="this.rol == 'administrador'">
